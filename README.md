@@ -27,7 +27,7 @@ Play Path/Stream Key: test
 ### Watching the steam
 
 In your favorite RTMP video player connect to the stream using the URL:
-rtmp://<your server ip>/live/test
+rtmp://&lt;your server ip&gt;/live/test
 
 ### Tested players
  * VLC
