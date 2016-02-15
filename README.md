@@ -21,13 +21,13 @@ Under broadcast settigns, set the follwing parameters:
 ```
 Streaming Service: Custom
 Server: rtmp://<your server ip>/live
-Play Path/Stream Key: test
+Play Path/Stream Key: mystream
 ```
 
 ### Watching the steam
 
 In your favorite RTMP video player connect to the stream using the URL:
-rtmp://&lt;your server ip&gt;/live/test
+rtmp://&lt;your server ip&gt;/live/mystream
 
 ### Tested players
  * VLC
