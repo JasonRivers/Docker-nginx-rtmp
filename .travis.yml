@@ -8,15 +8,13 @@ services:
 install:
   - git clone https://github.com/JasonRivers/Docker-nginx-rtmp.git ~/Docker-nginx-rtmp
 
-before_script:
-  - image='docker-nginx-rtmp'
-
 script:
-  - docker build -t "$image" .
-  - docker run -d -p1935:1935 -t $image
+  - docker build -t docker-nginx-rtmp:latest
+  - docker images
+  - docker run -d --name docker-nginx-rtmp -p1935:1935 -t docker-nginx-rtmp:latest
   - docker ps -a
 
 after_script:
-  - docker rm $image
-  - docker rmi $image
+  - docker rm docker-nginx-rtmp
+  - docker rmi docker-nginx-rtmp:latest
 
