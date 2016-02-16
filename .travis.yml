@@ -1,0 +1,22 @@
+sudo:
+  - required
+language:
+  - bash
+services:
+  - docker
+
+install:
+  - git clone https://github.com/JasonRivers/Docker-nginx-rtmp.git ~/Docker-nginx-rtmp
+
+before_script:
+  - image='docker-nginx-rtmp'
+
+script:
+  - docker build -t "$image" .
+  - docker run -d -p1935:1935 -t $image
+  - docker ps -a
+
+after_script:
+  - docker rm $image
+  - docker rmi $image
+
