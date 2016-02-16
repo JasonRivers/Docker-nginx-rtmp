@@ -11,7 +11,7 @@ install:
 script:
   - docker build -t docker-nginx-rtmp:latest .
   - docker images
-  - docker run -d --name docker-nginx-rtmp -p1935:1935 -t docker-nginx-rtmp:latest
+  - docker run -d --name docker-nginx-rtmp -p 1935:1935 -t docker-nginx-rtmp:latest
   - docker ps -a
 
 after_script:
