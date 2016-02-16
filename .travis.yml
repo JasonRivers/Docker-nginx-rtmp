@@ -9,7 +9,7 @@ install:
   - git clone https://github.com/JasonRivers/Docker-nginx-rtmp.git ~/Docker-nginx-rtmp
 
 script:
-  - docker build -t docker-nginx-rtmp:latest .
+  - ./build.sh
   - docker images
   - docker run -d --name docker-nginx-rtmp -p 1935:1935 -t docker-nginx-rtmp:latest
   - docker ps -a
