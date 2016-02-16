@@ -14,7 +14,3 @@ script:
   - docker run -d --name docker-nginx-rtmp -p 1935:1935 -t docker-nginx-rtmp:latest
   - docker ps -a
 
-after_script:
-  - docker rm docker-nginx-rtmp
-  - docker rmi docker-nginx-rtmp:latest
-
