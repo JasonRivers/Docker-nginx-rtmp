@@ -10,9 +10,6 @@ RUN	apk update		&&	\
 
 
 ADD	nginx.tar.gz /opt/
-#RUN	cd /tmp										&&	\
-#	mkdir -p /opt									&&	\
-#	tar xzf nginx.tar.gz -C /opt
 
 EXPOSE 1935
 
