@@ -10,10 +10,8 @@ RUN	apk update		&&	\
 
 
 ADD	nginx.tar.gz /opt/
-#RUN	cd /tmp										&&	\
-#	mkdir -p /opt									&&	\
-#	tar xzf nginx.tar.gz -C /opt
+ADD	nginx.conf /opt/nginx/conf/nginx.conf
 
-EXPOSE 1935
+EXPOSE 1935,8080
 
 CMD ["/opt/nginx/sbin/nginx", "-g", "daemon off;"]
