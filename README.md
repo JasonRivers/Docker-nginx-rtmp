@@ -1,11 +1,13 @@
 # Docker-nginx-rtmp
-Docker image for an RTMP server running on nginx
+Docker image for an RTMP/HLS server running on nginx
 
 NGINX Version 1.9.15
 nginx-rtmp-module Version 1.1.7
 
 ### Configurations
 This image exposes port 1935 for RTMP Steams and has 2 channels open "live" and "testing".
+
+Live is also accessable via HLS on port 8080
 
 It also exposes 8080 so you can access http://<your server ip>:8080/stat to see the streaming statistics.
 
@@ -30,6 +32,7 @@ Play Path/Stream Key: mystream
 
 In your favorite RTMP video player connect to the stream using the URL:
 rtmp://&lt;your server ip&gt;/live/mystream
+http://&lt;your server ip&gt;/hls/mystream.m3u8
 
 ### Tested players
  * VLC
