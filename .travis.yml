@@ -9,5 +9,5 @@ install:
   - git clone https://github.com/JasonRivers/Docker-nginx-rtmp.git ~/Docker-nginx-rtmp
 
 script:
-  - ./build.sh
+  - docker build -t nginx-rtmp .
 
