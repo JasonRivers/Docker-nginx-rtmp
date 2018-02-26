@@ -1,7 +1,9 @@
 FROM alpine:latest as builder
 MAINTAINER Jason Rivers <docker@jasonrivers.co.uk>
 
-ENV NGINX_VERSION 1.9.15
+ARG NGINX_VERSION=1.13.9
+ARG NGINX_RTMP_VERSION=1.2.1
+
 
 RUN	apk update		&&	\
 	apk add				\
@@ -35,7 +37,7 @@ RUN	apk update		&&	\
 
 RUN	cd /tmp/									&&	\
 	wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz			&&	\
-	git clone https://github.com/arut/nginx-rtmp-module.git
+	git clone https://github.com/arut/nginx-rtmp-module.git -b v${NGINX_RTMP_VERSION}
 
 RUN	cd /tmp										&&	\
 	tar xzf nginx-${NGINX_VERSION}.tar.gz						&&	\

@@ -1,8 +1,8 @@
 # Docker-nginx-rtmp
 Docker image for an RTMP/HLS server running on nginx
 
-NGINX Version 1.9.15
-nginx-rtmp-module Version 1.1.7
+NGINX Version 1.13.9
+nginx-rtmp-module Version 1.2.1
 
 ## Configurations
 This image exposes port 1935 for RTMP Steams and has 2 default channels open "live" and "testing".
