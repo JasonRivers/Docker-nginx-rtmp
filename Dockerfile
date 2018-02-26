@@ -57,9 +57,10 @@ RUN apk update		&& \
 
 COPY --from=0 /opt/nginx /opt/nginx
 ADD nginx.conf /opt/nginx/conf/nginx.conf
+ADD run.sh /
 
 EXPOSE 1935
 EXPOSE 8080
 
-CMD ["/opt/nginx/sbin/nginx", "-g", "daemon off;"]
+CMD /run.sh
 
