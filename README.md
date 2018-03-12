@@ -36,7 +36,7 @@ You can ush your main stream out to other RTMP servers, Currently this is limite
 docker run      \
     -p 1935:1935        \
     -p 8080:8080        \
-    -e RTMP_PUSH_URLS=https://youtube.com/myname/streamkey,https://twitch.tv/myname/streamkey
+    -e RTMP_PUSH_URLS=rtmp://live.youtube.com/myname/streamkey,rtmp://live.twitch.tv/app/streamkey
     jasonrivers/nginx-rtmp
 ```
 
