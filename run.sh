@@ -8,6 +8,9 @@ RTMP_STREAM_NAMES=${RTMP_STREAM_NAMES-live,testing}
 RTMP_STREAMS=$(echo ${RTMP_STREAM_NAMES} | sed "s/,/\n/g")
 RTMP_PUSH_URLS=$(echo ${RTMP_PUSH_URLS} | sed "s/,/\n/g")
 
+apply_config() {
+
+    echo "Creating config"
 ## Standard config:
 
 cat >${NGINX_CONFIG_FILE} <<!EOF
@@ -114,6 +117,14 @@ cat >>${NGINX_CONFIG_FILE} <<!EOF
     }
 }
 !EOF
+}
 
+if ! [ -f ${NGINX_CONFIG_FILE} ]; then
+    apply_config
+else
+    echo "CONFIG EXISTS - Not creating!"
+fi
+
+echo "Starting server..."
 /opt/nginx/sbin/nginx -g "daemon off;"
 

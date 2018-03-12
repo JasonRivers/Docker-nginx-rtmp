@@ -58,7 +58,7 @@ RUN apk update		&& \
 		pcre
 
 COPY --from=0 /opt/nginx /opt/nginx
-ADD nginx.conf /opt/nginx/conf/nginx.conf
+RUN rm /opt/nginx/conf/nginx.conf
 ADD run.sh /
 
 EXPOSE 1935
