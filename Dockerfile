@@ -32,11 +32,12 @@ RUN	apk update		&&	\
 		pcre-dev		\
 		zlib-dev		\
 		openssl-dev		\
+		curl			\
 		make
 
 
 RUN	cd /tmp/									&&	\
-	wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz			&&	\
+	curl --remote-name http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz			&&	\
 	git clone https://github.com/arut/nginx-rtmp-module.git -b v${NGINX_RTMP_VERSION}
 
 RUN	cd /tmp										&&	\
