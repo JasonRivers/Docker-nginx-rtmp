@@ -50,7 +50,7 @@ http {
             rtmp_stat_stylesheet stat.xsl;
         }
         location /stat.xsl {
-            root /opt/nginx/conf/stat.xsl;
+            alias /opt/nginx/conf/stat.xsl;
         }
         location /control {
             rtmp_control all;
