@@ -40,6 +40,7 @@ http {
             }
             root /tmp;
             add_header  Cache-Control no-cache;
+            add_header  Access-Control-Allow-Origin *;
         }
 
         location /on_publish {
@@ -96,6 +97,8 @@ if [ "${HLS}" = "true" ]; then
 cat >>${NGINX_CONFIG_FILE} <<!EOF
             hls on;
             hls_path /tmp/hls;
+            hls_fragment    1;
+            hls_playlist_length     20;
 !EOF
     HLS="false"
 fi
