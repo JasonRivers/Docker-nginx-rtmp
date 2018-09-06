@@ -1,7 +1,7 @@
 FROM alpine:latest as builder
 MAINTAINER Jason Rivers <docker@jasonrivers.co.uk>
 
-ARG NGINX_VERSION=1.13.9
+ARG NGINX_VERSION=1.15.3
 ARG NGINX_RTMP_VERSION=1.2.1
 
 
