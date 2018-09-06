@@ -9,7 +9,6 @@ RUN	apk update		&&	\
 	apk add				\
 		git			\
 		gcc			\
-		binutils-libs		\
 		binutils		\
 		gmp			\
 		isl			\
