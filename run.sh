@@ -81,7 +81,7 @@ else
     PUSH="true"
 fi
 
-HLS="true"
+HLS="false"
 
 for STREAM_NAME in $(echo ${RTMP_STREAMS}) 
 do
