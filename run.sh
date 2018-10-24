@@ -90,6 +90,7 @@ echo Creating stream $STREAM_NAME
 cat >>${NGINX_CONFIG_FILE} <<!EOF
         application ${STREAM_NAME} {
             live on;
+            publish_notify on;
             record off;
             on_publish http://localhost:8080/on_publish;
 !EOF
