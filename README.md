@@ -41,7 +41,7 @@ docker run      \
     jasonrivers/nginx-rtmp
 ```
 
-### Run the container automatically with Docker start
+### Run the container automatically
 
 ```
 docker run      \
@@ -51,7 +51,7 @@ docker run      \
     -e RTMP_STREAM_NAMES=live,teststream1,teststream2   \
     jasonrivers/nginx-rtmp
 ```
-
+The option --restart=always will let the container run automatically when Docker starts.
 
 ## OBS Configuration
 Under broadcast settigns, set the follwing parameters:
