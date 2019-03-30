@@ -17,8 +17,9 @@ The configuration file is in /opt/nginx/conf/
 
 To run the container and bind the port 1935 to the host machine; run the following:
 ```
-docker run -p 1935:1935 -p 8080:8080 jasonrivers/nginx-rtmp
+docker run -d -p 1935:1935 -p 8080:8080 jasonrivers/nginx-rtmp
 ```
+The option -d means that docker will run in the background.
 
 ### Multiple Streams:
 You can enable multiple streams on the container by setting RTMP_STREAM_NAMES when launching, This is a comma seperated list of names, E.G.
@@ -39,6 +40,18 @@ docker run      \
     -e RTMP_PUSH_URLS=rtmp://live.youtube.com/myname/streamkey,rtmp://live.twitch.tv/app/streamkey
     jasonrivers/nginx-rtmp
 ```
+
+### Run the container automatically with Docker start
+
+```
+docker run      \
+    -p 1935:1935        \
+    -p 8080:8080        \
+    --restart=always    \
+    -e RTMP_STREAM_NAMES=live,teststream1,teststream2   \
+    jasonrivers/nginx-rtmp
+```
+
 
 ## OBS Configuration
 Under broadcast settigns, set the follwing parameters:
