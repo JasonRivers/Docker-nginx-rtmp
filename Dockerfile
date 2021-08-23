@@ -1,8 +1,7 @@
 FROM alpine:latest as builder
-MAINTAINER Jason Rivers <docker@jasonrivers.co.uk>
 
-ARG NGINX_VERSION=1.15.3
-ARG NGINX_RTMP_VERSION=1.2.1
+ARG NGINX_VERSION=1.21.1
+ARG NGINX_RTMP_VERSION=1.2.2
 
 
 RUN	apk update		&&	\
@@ -18,7 +17,6 @@ RUN	apk update		&&	\
 		openssl			\
 		pkgconf			\
 		pkgconfig		\
-		mpfr3			\
 		mpc1			\
 		libstdc++		\
 		ca-certificates		\
@@ -50,6 +48,7 @@ RUN	cd /tmp										&&	\
 	make install
 
 FROM alpine:latest
+LABEL org.opencontainers.image.authors="jason@jasonrivers.co.uk"
 RUN apk update		&& \
 	apk add			   \
 		openssl		   \
